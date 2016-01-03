@@ -10,7 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
-import com.jazzros.remindme.adapter.TabsPagerFramentAdapter;
+import com.jazzros.remindme.adapter.TabsFramentAdapter;
 
 
 /**
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setTheme(R.style.AppDefault);
         super.onCreate(savedInstanceState);
         setContentView(LAYOUT);
-        
+
         initToolbar();
         initNavigationView();
         initTabs();
@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity {
     private void initTabs() {
 
         viewPager = (ViewPager)findViewById(R.id.viewpager);
-        TabsPagerFramentAdapter adapter = new TabsPagerFramentAdapter(getSupportFragmentManager());
+        TabsFramentAdapter adapter = new TabsFramentAdapter(this, getSupportFragmentManager());
         viewPager.setAdapter(adapter);
 
         TabLayout tabLayout = (TabLayout)findViewById(R.id.tabLayout);
